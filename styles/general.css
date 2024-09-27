@@ -1,5 +1,9 @@
 
+.title-on-off{
 
+    color:white
+
+}
 .box-on-off{
     display:flex;
     flex-direction: column;

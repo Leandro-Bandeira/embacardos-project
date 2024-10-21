@@ -1,57 +1,52 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Sistema de controle de Ar-condicionado </title>
-        <link rel="stylesheet" href="styles/general.css">
-         <!-- Incluindo os scripts do Firebase via CDN -->
-        <script type="module" src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-        <script type="module" src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
-        <!-- Seu arquivo JS que contém a lógica -->
-    </head>
-
+        <title> Tela de Registro </title>
+        <link rel="stylesheet" href="styles/registerGeneral.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <body>
-        <div class="box-on-off">
-            <div>
-                <p class="title-on-off">
-                     Escolha a opção desejada 
+        <div class="registration-container">
+            <div class="title-registration">
+                <p>
+                    Realize seu cadastro!
                 </p>
             </div>
-            <div class="box-button">
-                    <div class="title-on-off">
-                        Funcionamento:
-                    </div>
-                    <button  id="button-high" class="button-on-off">
-                        <p>
-                            Ligar
-                        </p>
-                    </button>
-                    <button id="button-low" class="button-on-off">
-                        <p>
-                            Desligar
-                        </p>
-                    </button>
-                    <div class="title-on-off">
-                        Temperatura:
-                    </div>
-                    <button id="button-temp-high" class="button-on-off">
-                        <p>
-                            Aumentar
-                        </p>
-                    </button>
-                    <button id="button-temp-low" class="button-on-off">
-                        <p>
-                            Diminuir
-                        </p>
-                    </button>
-                    <div class="tittle-on-off">
-                        <p id="message">
-
-                        </p>
-                    </div>
+            <div class="login-pass-container">
+                <div class="title-login">
+                    <p>
+                        Usuário
+                    </p>
+                </div>
+                <div class="box-login">
+                    <input type="text" placeholder="Digite aqui seu usuário" class="text-input">
+                </div>
+                <div class="title-pass">
+                    <p>
+                        Senha
+                    </p>
+                </div>
+                <div class="box-pass">
+                    <input type="text" placeholder="Digite aqui sua senha" class="text-input">
+                </div>
+                <div class="title-pass2">
+                    <p>
+                        Confirme a Senha
+                    </p>
+                </div>
+                <div class="box-pass">
+                    <input type="text" placeholder="Digite aqui sua senha novamente" class="text-input">
+                </div>
+                
+                <div  class="button-submit">
+                    <button id="button-submit" type="submit" name="submit"> Registrar </button>
+                </div>    
+               
+                
+                </div>
             </div>
         </div>
-        <script type="module" src="conexao.js"></script>
+        <script type="module" src="button.js"></script>
     </body>
 </html>

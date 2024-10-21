@@ -1,28 +1,3 @@
-
-  
-
-  
-
-
-// // script.js
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
-// import { getDatabase } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";
-
-// // Configurações do Firebase
-// const firebaseConfig = {
-//     apiKey: "SUA_API_KEY",
-//     authDomain: "SEU_AUTH_DOMAIN",
-//     projectId: "SEU_PROJECT_ID",
-//     storageBucket: "SEU_STORAGE_BUCKET",
-//     messagingSenderId: "SEU_MESSAGING_SENDER_ID",
-//     appId: "SEU_APP_ID",
-//     databaseURL: "https://DATABASE_NAME.firebaseio.com",
-// };
-
-// // Inicializando o Firebase
-// const app = initializeApp(firebaseConfig);
-// const database = getDatabase(app);
-
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
   import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-database.js";
 
@@ -60,7 +35,7 @@ function sendMessage1() {
         message: "1"
     };
 
-    set(ref(database, 'new'), data)
+    set(ref(database, '/messages'), data)
         .then(() => {
             message.textContent = "Comando de Ligar enviado";
         })
@@ -75,7 +50,7 @@ function sendMessage2() {
         message: "2"
     };
 
-    set(ref(database, 'messages/message2'), data)
+    set(ref(database, '/messages'), data)
         .then(() => {
             message.textContent = "Comando de Desligar enviado";
         })
@@ -90,7 +65,7 @@ function sendMessage3() {
         message: "3"
     };
 
-    set(ref(database, 'messages/message3'), data)
+    set(ref(database, '/messages'), data)
         .then(() => {
             message.textContent = "Comando de aumentar temperatura enviado";
         })
@@ -105,7 +80,7 @@ function sendMessage4() {
         message: "4"
     };
 
-    set(ref(database, 'messages/message4'), data)
+    set(ref(database, '/messages'), data)
         .then(() => {
             message.textContent = "Comando de diminuir temperatura enviado";
         })

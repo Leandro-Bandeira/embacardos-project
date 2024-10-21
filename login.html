@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Tela de Registro </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/registerGeneral.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+       
+    </head>
+    <body>
+        <div class="registration-container">
+            <div class="title-registration">
+                <p>
+                    Realize seu Login
+                </p>
+            </div>
+           
+            <div class="login-pass-container">
+                <div class="title-login">
+                    <p>
+                        Usuário
+                    </p>
+                </div>
+                <div class="box-login">
+                    <input id="login" type="text" placeholder="Digite aqui seu usuário" class="text-input" required>
+                </div>
+                <div class="title-pass">
+                    <p>
+                        Senha
+                    </p>
+                </div>
+                <div class="box-pass"></div>
+                    <input id="senha1" type="text" placeholder="Digite aqui sua senha" class="text-input" required>
+                </div>
+                <div  class="button-submit">
+                    <button id="button-login2" type="submit" name="submit"> Login </button>
+                </div>    
+                
+                <p id="msg">
+                    
+                </p> 
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script type="module" src="identificacao_login.js"></script>
+       
+    </body>
+</html>

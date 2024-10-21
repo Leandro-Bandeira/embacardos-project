@@ -1,6 +1,6 @@
 
-const buttonSubmit = document.getElementById("button-submit");
+const buttonSubmit = document.getElementById("button-login");
 function changePage(){
-    window.location.href = "funcionalidades.html";
+    window.location.href = "login.html";
 }
 buttonSubmit.addEventListener("click", changePage)

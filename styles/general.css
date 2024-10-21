@@ -1,7 +1,16 @@
+body{
 
+    background: linear-gradient(to right, #2C3E50, #4CA1AF, #3498db);
+}
+p{
+    font-family: Oswald, Arial;
+    margin-top:0;
+    margin-bottom:0;
+    color: #34495e;;
+    font-size: 15px;
+}
 .title-on-off{
-
-    color:white
+    margin-bottom: 5px;
 
 }
 .box-on-off{
@@ -15,10 +24,9 @@
     transform: translate(-50%, -50%);
     width: 40vh;
     height: 40vh;
+    background-color: #ccdbdf;
     box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
-    background-image: linear-gradient(135deg, #1491ff, #0346b6);
-    border-style: solid;
-    border-radius:6px;
+    border-radius:30px;
 }
 
 .box-button{
@@ -28,10 +36,11 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    gap:20px;
+    gap:15px;
 
     
 }
+
 .button-on-off{
     width: 100px;
     height: 50px;

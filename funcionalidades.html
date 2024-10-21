@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Sistema de controle de Ar-condicionado </title>
+        <link rel="stylesheet" href="styles/general.css">
+         <!-- Incluindo os scripts do Firebase via CDN -->
+        <script type="module" src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+        <script type="module" src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js"></script>
+        <!-- Seu arquivo JS que contém a lógica -->
+    </head>
+
+    <body>
+        <div class="box-on-off">
+            <div>
+                <p class="title-on-off">
+                     Escolha a opção desejada 
+                </p>
+            </div>
+            <div class="box-button">
+                    <div class="title-on-off">
+                        Funcionamento:
+                    </div>
+                    <button  id="button-high" class="button-on-off">
+                        <p>
+                            Ligar
+                        </p>
+                    </button>
+                    <button id="button-low" class="button-on-off">
+                        <p>
+                            Desligar
+                        </p>
+                    </button>
+                    <div class="title-on-off">
+                        Temperatura:
+                    </div>
+                    <button id="button-temp-high" class="button-on-off">
+                        <p>
+                            Aumentar
+                        </p>
+                    </button>
+                    <button id="button-temp-low" class="button-on-off">
+                        <p>
+                            Diminuir
+                        </p>
+                    </button>
+                    <div class="tittle-on-off">
+                        <p id="message">
+
+                        </p>
+                    </div>
+            </div>
+        </div>
+        <script type="module" src="conexao.js"></script>
+    </body>
+</html>

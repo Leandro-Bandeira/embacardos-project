@@ -20,7 +20,10 @@ const message = document.getElementById("msg");
     const login_value = login.value;
     const senha_value = senha.value;
   
-
+    if(login_value == "" || senha_value == ""){
+      message.textContent = "Digite um login e senha válidos"
+      return;
+    }
     const{data:existingUser, erro:fetchError} = await _supabase
         .from('credenciais')
         .select('login')

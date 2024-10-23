@@ -29,10 +29,15 @@ const sendMessageBtn3 = document.getElementById("button-temp-high");
 const sendMessageBtn4 = document.getElementById("button-temp-low");
 const message = document.getElementById("message");
 
+var timestamp = Date.now().toString();
+
 // Função para enviar uma mensagem simples ao Firebase
 function sendMessage1() {
+
+    var outroValor = "1";
+    var mensagem = timestamp + ": " + outroValor;
     const data = {
-        message: "1"
+        message: mensagem
     };
 
     set(ref(database, '/messages'), data)
@@ -46,8 +51,11 @@ function sendMessage1() {
 
 // Função para enviar a Mensagem 2 ao Firebase
 function sendMessage2() {
+
+    var outroValor = "2";
+    var mensagem = timestamp + ": " + outroValor;
     const data = {
-        message: "2"
+        message: mensagem
     };
 
     set(ref(database, '/messages'), data)
@@ -61,8 +69,11 @@ function sendMessage2() {
 
 // Função para enviar a Mensagem 3 ao Firebase
 function sendMessage3() {
+
+    var outroValor = "3";
+    var mensagem = timestamp + ": " + outroValor;
     const data = {
-        message: "3"
+        message: mensagem
     };
 
     set(ref(database, '/messages'), data)
@@ -76,8 +87,10 @@ function sendMessage3() {
 
 // Função para enviar a Mensagem 4 ao Firebase
 function sendMessage4() {
+    var outroValor = "4";
+    var mensagem = timestamp + ": " + outroValor;
     const data = {
-        message: "4"
+        message: mensagem
     };
 
     set(ref(database, '/messages'), data)
@@ -94,5 +107,3 @@ sendMessageBtn1.addEventListener("click", sendMessage1);
 sendMessageBtn2.addEventListener("click", sendMessage2);
 sendMessageBtn3.addEventListener("click", sendMessage3);
 sendMessageBtn4.addEventListener("click", sendMessage4);
-
-

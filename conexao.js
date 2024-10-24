@@ -116,6 +116,7 @@ function sendMessage2() {
         .catch((error) => {
             message.textContent = "Erro ao enviar Mensagem de desligar: " + error.message;
         });
+  
 }
 
 // Função para enviar a Mensagem 3 ao Firebase
@@ -134,6 +135,7 @@ function sendMessage3() {
         .catch((error) => {
             message.textContent = "Erro ao enviar Mensagem de aumentar temperatura: " + error.message;
         });
+  message.textContent = "";
 }
 
 // Função para enviar a Mensagem 4 ao Firebase

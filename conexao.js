@@ -30,10 +30,58 @@ const sendMessageBtn4 = document.getElementById("button-temp-low");
 const message = document.getElementById("message");
 
 var timestamp = Date.now().toString();
+let intervalo; // Variável para armazenar o intervalo único
+let contadorAtivo = false; // Verifica se o contador já está ativo
+let intervalo2;
+let intervalo3;
+function iniciarContador() {
+    // Limpa o intervalo anterior (se houver) para garantir que só um esteja rodando
+    if (intervalo) {
+        clearInterval(intervalo);
+    }
+    
+    // Definindo o valor inicial do contador
+    let contador = 30;
+   
 
+    // Define que o contador está ativo
+    contadorAtivo = true;
+    // Função que será chamada a cada segundo
+    intervalo = setInterval(() => {
+        
+        // Diminui o valor do contador
+        contador--;
+        // Atualiza o elemento com o valor atual do contador
+        document.getElementById("contador").innerText = contador + "s";
+        // Se o contador chegar a zero, limpa o intervalo
+        if (contador < 0) {
+            clearInterval(intervalo);
+            contadorAtivo = false; // Contador não está mais ativo
+            document.getElementById("contador").innerText = "";
+        }
+    }, 1000); // 1000 milissegundos = 1 segundo
+}
+function timeOutButton1(){
+   
+    sendMessageBtn1.disabled = true;
+    intervalo2 = setTimeout(() => {
+        // Habilita o botão após 30 segundos
+        sendMessageBtn1.disabled = false;
+
+    }, 30000); // 30 segundos
+}
+function timeOutButton2(){
+   
+    sendMessageBtn2.disabled = true;
+    intervalo3 = setTimeout(() => {
+        // Habilita o botão após 30 segundos
+        sendMessageBtn2.disabled = false;
+
+    }, 30000); // 30 segundos
+}
 // Função para enviar uma mensagem simples ao Firebase
 function sendMessage1() {
-
+    
     var outroValor = "1";
     var mensagem = timestamp + ": " + outroValor;
     const data = {
@@ -42,7 +90,7 @@ function sendMessage1() {
 
     set(ref(database, '/messages'), data)
         .then(() => {
-            message.textContent = "Comando de Ligar enviado";
+            message.textContent = "Aguarde 30s para ligar novamente";
         })
         .catch((error) => {
             message.textContent = "Erro ao enviar Mensagem de ligar: " + error.message;
@@ -51,7 +99,7 @@ function sendMessage1() {
 
 // Função para enviar a Mensagem 2 ao Firebase
 function sendMessage2() {
-
+    
     var outroValor = "2";
     var mensagem = timestamp + ": " + outroValor;
     const data = {
@@ -60,7 +108,7 @@ function sendMessage2() {
 
     set(ref(database, '/messages'), data)
         .then(() => {
-            message.textContent = "Comando de Desligar enviado";
+            message.textContent = "Aguarde 30s para desligar novamente";
         })
         .catch((error) => {
             message.textContent = "Erro ao enviar Mensagem de desligar: " + error.message;
@@ -69,7 +117,7 @@ function sendMessage2() {
 
 // Função para enviar a Mensagem 3 ao Firebase
 function sendMessage3() {
-
+    
     var outroValor = "3";
     var mensagem = timestamp + ": " + outroValor;
     const data = {
@@ -87,6 +135,7 @@ function sendMessage3() {
 
 // Função para enviar a Mensagem 4 ao Firebase
 function sendMessage4() {
+    
     var outroValor = "4";
     var mensagem = timestamp + ": " + outroValor;
     const data = {
@@ -104,6 +153,12 @@ function sendMessage4() {
 
 // Adiciona um evento de clique ao botão
 sendMessageBtn1.addEventListener("click", sendMessage1);
+sendMessageBtn1.addEventListener("click", timeOutButton1);
 sendMessageBtn2.addEventListener("click", sendMessage2);
+sendMessageBtn2.addEventListener("click", timeOutButton2);
 sendMessageBtn3.addEventListener("click", sendMessage3);
 sendMessageBtn4.addEventListener("click", sendMessage4);
+
+sendMessageBtn2.addEventListener("click", iniciarContador);
+sendMessageBtn1.addEventListener("click", iniciarContador);
+

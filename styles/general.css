@@ -29,6 +29,10 @@ p{
     border-radius:30px;
 }
 
+.temp{
+
+    text-align: center;
+}
 .box-button{
 
     display:flex;

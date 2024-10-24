@@ -32,7 +32,7 @@ const message = document.getElementById("message");
 let counter = 0
 var opa = Date.now() + ident;
 ident = ident+1;
-var timestamp = ident.toString();
+var timestamp = opa.toString();
 let intervalo; // Variável para armazenar o intervalo único
 let contadorAtivo = false; // Verifica se o contador já está ativo
 let intervalo2;

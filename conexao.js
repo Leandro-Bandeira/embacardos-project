@@ -20,6 +20,7 @@
 
   const app = initializeApp(firebaseConfig);
   const database = getDatabase(app);
+  var ident = 1;
   
 
 // Seleciona o botão e a mensagem
@@ -29,7 +30,9 @@ const sendMessageBtn3 = document.getElementById("button-temp-high");
 const sendMessageBtn4 = document.getElementById("button-temp-low");
 const message = document.getElementById("message");
 
-var timestamp = Date.now().toString();
+var opa = Date.now() + ident;
+ident = ident+1;
+var timestamp = ident.toString();
 let intervalo; // Variável para armazenar o intervalo único
 let contadorAtivo = false; // Verifica se o contador já está ativo
 let intervalo2;

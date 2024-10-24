@@ -20,7 +20,6 @@
 
   const app = initializeApp(firebaseConfig);
   const database = getDatabase(app);
-  var ident = 1;
   
 
 // Seleciona o botão e a mensagem
@@ -30,9 +29,8 @@ const sendMessageBtn3 = document.getElementById("button-temp-high");
 const sendMessageBtn4 = document.getElementById("button-temp-low");
 const message = document.getElementById("message");
 let counter = 0
-var opa = Date.now() + ident;
-ident = ident+1;
-var timestamp = opa.toString();
+var ident;
+
 let intervalo; // Variável para armazenar o intervalo único
 let contadorAtivo = false; // Verifica se o contador já está ativo
 let intervalo2;
@@ -84,7 +82,9 @@ function timeOutButton2(){
 }
 // Função para enviar uma mensagem simples ao Firebase
 function sendMessage1() {
-    
+    var opa = Date.now() + ident;
+    ident = ident+1;
+    var timestamp = opa.toString();  
     var outroValor = "1";
     var mensagem = timestamp + ": " + outroValor;
     const data = {
@@ -102,7 +102,10 @@ function sendMessage1() {
 
 // Função para enviar a Mensagem 2 ao Firebase
 function sendMessage2() {
-    
+
+  var opa = Date.now() + ident;
+  ident = ident+1;
+  var timestamp = opa.toString();
     var outroValor = "2";
     var mensagem = timestamp + ": " + outroValor;
     const data = {
@@ -121,7 +124,12 @@ function sendMessage2() {
 
 // Função para enviar a Mensagem 3 ao Firebase
 function sendMessage3() {
-    
+
+  
+  var opa = Date.now() + ident;
+ident = ident+1;
+var timestamp = opa.toString();
+  
     var outroValor = "3";
     var mensagem = timestamp + ": " + outroValor;
     const data = {
@@ -140,6 +148,10 @@ function sendMessage3() {
 
 // Função para enviar a Mensagem 4 ao Firebase
 function sendMessage4() {
+
+    var opa = Date.now() + ident;
+    ident = ident+1;
+    var timestamp = opa.toString();
     
     var outroValor = "4";
     var mensagem = timestamp + ": " + outroValor;

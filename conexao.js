@@ -29,7 +29,7 @@ const sendMessageBtn2 = document.getElementById("button-low");
 const sendMessageBtn3 = document.getElementById("button-temp-high");
 const sendMessageBtn4 = document.getElementById("button-temp-low");
 const message = document.getElementById("message");
-
+let counter = 0
 var opa = Date.now() + ident;
 ident = ident+1;
 var timestamp = ident.toString();
@@ -111,7 +111,7 @@ function sendMessage2() {
 
     set(ref(database, '/messages'), data)
         .then(() => {
-            message.textContent = "Aguarde 30s para desligar novamente";
+            message.textContent = "Aguarde 30s para desligar novamente ";
         })
         .catch((error) => {
             message.textContent = "Erro ao enviar Mensagem de desligar: " + error.message;
@@ -130,12 +130,12 @@ function sendMessage3() {
 
     set(ref(database, '/messages'), data)
         .then(() => {
-            message.textContent = "Comando de aumentar temperatura enviado";
+            message.textContent = "Comando de aumentar temperatura enviado " + counter;
         })
         .catch((error) => {
             message.textContent = "Erro ao enviar Mensagem de aumentar temperatura: " + error.message;
         });
-  message.textContent = "";
+    counter += 1;
 }
 
 // Função para enviar a Mensagem 4 ao Firebase

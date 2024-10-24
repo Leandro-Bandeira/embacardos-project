@@ -29,7 +29,7 @@ const sendMessageBtn3 = document.getElementById("button-temp-high");
 const sendMessageBtn4 = document.getElementById("button-temp-low");
 const message = document.getElementById("message");
 let counter = 0
-var ident;
+var ident = 1;
 
 let intervalo; // Variável para armazenar o intervalo único
 let contadorAtivo = false; // Verifica se o contador já está ativo
